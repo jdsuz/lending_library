@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-wd8)0#afg_r8pwex!_&4t&=m=v#fx=a&&&px*wh5zvl#$m)as=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -62,7 +62,7 @@ ROOT_URLCONF = 'lending_library.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'lending_library/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -153,7 +153,7 @@ if os.getcwd() == '/app' or cwd[:4] == '/tmp':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
 
     # Allow only Heroku to host the project.
-    ALLOWED_HOSTS = ['*'] #needs to match heroku app name
+    ALLOWED_HOSTS = ['evening-temple-97206.herokuapp.com'] #needs to match heroku app name
 
     DEBUG = False
 
