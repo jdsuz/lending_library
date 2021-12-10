@@ -19,7 +19,7 @@ class Product(models.Model):
 
 	description = models.TextField(default='')
 	owner = models.ForeignKey(User, on_delete=models.CASCADE)
-	# borrower = models.ForeignKey(Borrower, on_delete=models.CASCADE)
+	borrower = models.ForeignKey(User, on_delete=models.CASCADE, related_name='borrower', null=True)
 	
 	def __str__(self):
 		"""Return a string representation of the model."""
@@ -37,3 +37,4 @@ class Entry(models.Model):
 	def __str__(self):
 		"""Return a string representation of the model."""
 		return self.text[:50] + "..."
+

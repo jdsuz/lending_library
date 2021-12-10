@@ -9,13 +9,27 @@ product characteristics
 	Cost (if any)
 
 
-Things Borrowed / Things Loaned / MyLibrary
-	- create an "exchange" between users 
+Backlog:
+	- Create a "borrower" attribute
+	- Books Borrowed/Books Loaned
+	- Uniform style for all pages
+	- get on GitHub
+	- STATIC FILES
+	- fix borrow button
+	- turn entries into comments/history 
+	- add Header/Footer to base.html
+	- add location (like craigslist)
+	- add location based timestamps/timezones
+	- handle images
 
-add Header/Footer to base.html
-
-git config --global user.email “jdsouza0325@gmail.com”
 
 available = models.BooleanField(default=True) --> put in product model
 
-turn entries into comments/history
+What are you trying to do?
+	- Introduce the concept of a "borrower" to a product/book. A borrower should be able to borrow a book andd eventually request to borrow a book.
+What have you tried so far?
+	- Different User Models
+	- ForeignKey, OneToOneField, ManyToManyField
+What results have you been getting?
+	- I don't believe I need different user types because all users should be both a lender and a borrower. 
+	- When trying to add a borrower attribute to the Products model I get: IntegrityError: UNIQUE constraint failed: new__products_product.borrower_id

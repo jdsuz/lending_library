@@ -48,6 +48,7 @@ def my_products(request):
 	context = {'products': products}
 	return render(request, 'products/my_products.html', context)
 
+@login_required
 def borrow_product(request, product_id):
 	"""Borrow a product."""
 	product = Product.objects.get(id=product_id)

@@ -9,8 +9,9 @@
 
   <p>Product: {{ product }}</p>
   <p>Type: {{ product.product_type }}</p>
-  <p>Description: {{product.description }}</p>
-  <p>Owner: {{product.owner }}</p>
+  <p>Description: {{ product.description }}</p>
+  <p>Owner: {{ product.owner }}</p>
+  <p>Borrower: {{ product.borrower }}</p>
 
   {% buttons %}
     <button name="submit" class="btn btn-primary"><a href="{% url 'products:borrow_product' product.id %}">borrow product</a></button>
