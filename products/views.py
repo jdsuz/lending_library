@@ -65,3 +65,10 @@ def borrow_product(request, product_id):
 
 	context = {'product': product, 'form': form}
 	return render(request, 'products/borrow_product.html', context)
+
+@login_required
+def borrowed_products(request):
+	"""Show all products borrowed by a user."""
+	products = Product.objects.filter(borrower=request.user).order_by('date_added')
+	context = {'products': products}
+	return render(request, 'products/borrowed_products.html', context)

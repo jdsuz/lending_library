@@ -20,6 +20,9 @@ urlpatterns = [
     # MyProducts
     path('myproducts/', views.my_products, name='my_products'),
 
+    # BorrowedProducts
+    path('borrowed_products/', views.borrowed_products, name='borrowed_products'),
+
     # Page for borrowing a product
     path('borrow_product/<int:product_id>/', views.borrow_product, name='borrow_product'),
 

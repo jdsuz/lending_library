@@ -1,0 +1,21 @@
+{% extends "products/base.html" %}
+
+{% block header %}
+  <h1>Borrowed Products</h1>
+{% endblock header %}
+
+{% block content %}
+
+  <ul>
+    {% for product in products %}
+      <li>
+        <h3>
+          <a href="{% url 'products:product' product.id %}">{{ product }}</a> {{ product.date_added|date:'M d, Y H:i'}}
+        </h3>
+      </li>
+    {% empty %}
+      <li>No products have been borrowed yet.</li>
+    {% endfor %}
+  </ul>
+
+{% endblock content %}

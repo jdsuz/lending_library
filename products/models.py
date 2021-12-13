@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 class Product(models.Model):
 	"""A product the user wants to list."""
 	text = models.CharField(max_length=200)
+	author = models.CharField(max_length=200)
+
 	date_added = models.DateTimeField(auto_now_add=True)
 	PRODUCT_TYPE_CHOICES = [
 		('Book', 'Book'),
@@ -18,6 +20,9 @@ class Product(models.Model):
 		)
 
 	description = models.TextField(default='')
+	
+	#Interaction attributes
+	is_available = models.BooleanField(default=True)
 	owner = models.ForeignKey(User, on_delete=models.CASCADE)
 	borrower = models.ForeignKey(User, on_delete=models.CASCADE, related_name='borrower', null=True)
 	

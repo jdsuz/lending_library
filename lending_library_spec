@@ -11,7 +11,10 @@ product characteristics
 
 Backlog:
 	- Create a "borrower" attribute
+		- borrower user type
+		- is_available attribute
 	- Books Borrowed/Books Loaned
+		- books loaned should just be designated in the MyLibrary
 	- Uniform style for all pages
 	- get on GitHub
 	- STATIC FILES
